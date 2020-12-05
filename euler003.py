@@ -3,21 +3,14 @@
 
 number = 600851475143
 
-# going to need a sieve or something
-# just do eratosthenes, but maybe revisit and do SQUFOF at some point?
-def sieve(n):
+# just brute force it...
+n = 2
+# intuitively, we only have to check up to sqrt of number
+while (n ** 2) < number:
 
-    numbers = list(range(0, n + 1))
-    for prime in numbers:
+    # if number is divisible by the current n, divide number by that n
+    while number % n == 0:
+        number = number / n
+    n += 1
 
-        if prime < 2:
-            continue
-        elif prime > (n ** 0.5):
-            break
-        for j in range(prime ** 2, n, prime):
-            numbers[j] = 0
-
-    return [i for i in numbers if i > 1]
-
-# sieve for prime factors of number
-print(max([fac for fac in sieve(number) if number % fac == 0]))
+print(int(number))
