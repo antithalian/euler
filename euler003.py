@@ -1,4 +1,4 @@
-# project euler problem #2
+# project euler problem #3
 # find largest prime factor of 600851475143
 
 number = 600851475143
